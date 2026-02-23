@@ -8,6 +8,18 @@ This was vibe-coded in a single chat session with an AI for fun and learning. **
 
 ## Components
 
+```
+┌──────────┐    SOCKS5     ┌──────────────┐     HTTP      ┌──────────────┐     HTTP      ┌──────────────┐     TCP      ┌──────────┐
+│          │ ────────────► │              │ ────────────► │              │ ────────────► │              │ ────────────► │          │
+│  Firefox │               │  socks5-http │               │    bridge    │               │  tcp-http    │               │  Remote  │
+│  / curl  │               │  -bridge     │               │   _server.py │               │  -bridge     │               │  Server  │
+│          │ ◄──────────── │              │ ◄──────────── │              │ ◄──────────── │              │ ◄──────────── │          │
+└──────────┘               └──────────────┘               └──────────────┘               └──────────────┘               └──────────┘
+   Client                   SOCKS5 Proxy                   HTTP Relay                    TCP Connector                   Target
+   (your machine)           (your machine)                 (anywhere)                    (has network access)            (e.g. example.com)
+```
+
+
 | Component | Language | Role |
 |-----------|----------|------|
 | **http-bridge-client** | Rust | Local SOCKS5 proxy. Accepts connections from browsers/curl, translates them into HTTP API calls |
