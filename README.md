@@ -9,7 +9,7 @@ This was vibe-coded in a single chat session with an AI for fun and learning. **
 ## Components
 
 ```
-┌──────────┐    SOCKS5     ┌──────────────┐     HTTP      ┌──────────────┐     HTTP      ┌──────────────┐     TCP      ┌──────────┐
+┌──────────┐    SOCKS5     ┌──────────────┐     HTTP      ┌──────────────┐     HTTP      ┌──────────────┐     TCP       ┌──────────┐
 │          │ ────────────► │              │ ────────────► │              │ ────────────► │              │ ────────────► │          │
 │  Firefox │               │  http-bridge │               │    bridge    │               │  http-bridge │               │  Remote  │
 │  / curl  │               │  -client     │               │   _server.py │               │  -server     │               │  Server  │
