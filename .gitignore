@@ -1,0 +1,11 @@
+/target
+
+# IDE/Editor specific (examples)
+.idea/
+.vscode/
+*.swp
+*~
+
+# OS specific (examples)
+.DS_Store
+Thumbs.db
